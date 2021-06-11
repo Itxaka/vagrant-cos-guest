@@ -22,6 +22,7 @@ jobs:
         ruby-version: 2.6.x
 
     - name: Publish to GPR
+      if: always()
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
@@ -34,6 +35,7 @@ jobs:
         OWNER: ${{ github.repository_owner }}
 
     - name: Publish to RubyGems
+      if: always()
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
